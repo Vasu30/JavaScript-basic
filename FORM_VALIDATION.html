@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pract 7</title>
+</head>
+<script type="text/javascript">
+	function valid(){
+		var fn=document.forms["myform"]["fname"].value;
+		if(fn == ""||fn>=0)
+		{
+			alert("Please Enter Your First Name in TEXT");
+			return false;
+		}
+		var ln=document.forms["myform"]["lname"].value;
+		if(ln == ""||ln>=0)
+		{
+			alert("Pleaser Enter your Last Name in Text");
+		}
+		var ps=document.forms["myform"]["pass"].value;
+		if (ps.length<= 6||ps.length>=12){
+			alert("Please Enter your Password with length between 6 to 12");
+		}
+		var cps=document.forms["myform"]["cpass"].value;
+		if(cps!=ps){
+			alert("Please Enter matching Password");
+		}
+
+		var number = document.forms["myform"]["num"].value;
+		if(number.length != 10)
+		{
+			alert("Please Enter Mobile number in 10 Digit");
+		}
+		var male=document.getElementById("gen_male").checked;
+		var female=document.getElementById("gen_female").checked;
+		if(!male && !female){
+			alert("Please check In Gender Box");
+		}
+		
+		var read=document.getElementById("read").checked;
+		var dance=document.getElementById("dance").checked;
+		var write=document.getElementById("write").checked;
+		
+		if (!read && !dance && !write){
+			alert("Please Select Hobby First");
+		}
+
+		var day=document.forms["myform"]["bday"].value;
+		if(day == "")
+		{
+			alert("Please Enter Data Of Birth");
+		}
+	}
+</script>
+<body bgcolor="lightblue">
+<form onsubmit="valid()" name="myform">
+<center>
+<table border="1" cellpadding="10"><tr><th>
+<h2><u>:Registration Form:</u></h2>
+<h3>First Name:<input type="text" name="fname" size="10">
+Last Name:<input type="text" name="lname" size="10"></h3>
+
+<h4>Email:  <input type="Email" name="email" size="47"></h4>
+
+<h>Password: <input type="password" name="pass"></h4>
+
+<h4>Comfirm Password: <input type="password" name="cpass"></h4>
+
+<h4>Mobile Number:<input type="number" name="num"></h4>
+
+<h4>Gender:
+<input type="radio" name="gender" value="Male" id="gen_male">Male
+<input type="radio" name="gender" value="Male" id="gen_female">Female
+ 
+<h4>Hobbies:
+<input type="checkbox" name="hobby" value="Reading" id="read">Reading
+<input type="checkbox" name="hobby" value="Dancing" id="dance">Dancing
+<input type="checkbox" name="hobby" value="Reading" id="write">Writting</h4>
+
+<h4>Date of birth:
+<input type="Date" name="bday"></h4>
+
+<input type="submit" name="submit">
+<input type="Reset" name="reset">
+</th></tr></table>
+</center>
+</form>
+</body>
+</html>
